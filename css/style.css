@@ -1,5 +1,26 @@
-#wrapper { width:990px; left:50%; position:relative; margin-left:-495px;}
-#navigation{min-height: 50px; background: gray; width: 990px;}
-.module {min-width: 150px; min-height: 150px; background: black; float: left; margin: 1px; border: white solid 1px;}
+#wrapper { width:100%; margin: 10px;}
 
+#navigation{float:left; color: white; width:100%; min-height: 50px; list-style:none; font-family: Arial, sans-serif; font-weight:bold; margin-bottom:10px;}
+#navigation li{min-width: 200px; float:left;margin-right:2px;position:relative;display:block;background-color: black;}
+#navigation li a{display:block;color:white;background:grey;text-decoration:none;}
+
+#navigation ul{width: 100%; color: white; background-color: grey; margin-top: 0px; list-style:none;position:absolute;left:-9999px;opacity:0; -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; filter:alpha(opacity=0);-webkit-transition:0.25s linear opacity; z-index: 999999; padding-left: 0px;}
+#navigation ul li{float:none; margin: 0px; margin-top: 5px;}
+#navigation ul a{white-space:nowrap; display:block;}
+#navigation li:hover ul{left:0;opacity:1; -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; filter:alpha(opacity=100);}
+#navigation li:hover a{background:black; text-decoration:none;}
+#navigation li:hover ul a{text-decoration:none; color: grey;}
+#navigation li:hover ul li a:hover{background:black; background:green;text-decoration:none; color: white;}
+
+.module {min-width: 150px; min-height: 150px; background: black; float: left; margin: 1px; border: white solid 1px;}
 .draggable {cursor: move; float: none; position: absolute;}
+.clearfix {width: 100%; clear: both;}
+
+
+
+
+
+
+
+
+
