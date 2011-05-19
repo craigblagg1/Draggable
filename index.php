@@ -17,7 +17,13 @@ $(document).ready(function(){
 	
 	var numberElements = $('#content').children().length;
 	var numberNavElements = $('#navigation').children().length;
-	var availableWidth = window.innerWidth - (numberNavElements * 200) - 30;
+	var navWidth = (window.innerWidth - 150)/numberNavElements;
+	//alert(navWidth);
+	for (n=1;n<=numberNavElements;n++)
+	{
+		$('#nav'+ n).css({'width':navWidth});
+	}
+	var availableWidth = window.innerWidth - (numberNavElements * navWidth) - 30;
 	var depth = numberElements;
 	var i=0;
 	var left=0;
