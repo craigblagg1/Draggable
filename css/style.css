@@ -1,0 +1,5 @@
+#wrapper { width:990px; left:50%; position:relative; margin-left:-495px;}
+#navigation{min-height: 50px; background: gray; width: 990px;}
+.module {min-width: 150px; min-height: 150px; background: black; float: left; margin: 1px; border: white solid 1px;}
+
+.draggable {cursor: move; float: none; position: absolute;}
