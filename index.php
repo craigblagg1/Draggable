@@ -9,11 +9,40 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
+	visibleBool = false;
 	$('.module').addClass('draggable');	
-	
+	$('#slideContent').css({'left':window.innerWidth});
 	$(function() {
 		$(".draggable").multidraggable();
 	});
+	
+	$('#button').click( function(){
+			if(visibleBool == true){
+			for (n=1;n<=numberElements;n++){
+			var currentLeft = parseFloat(($('#' + n).css('left').split("px"))[0]);
+			$('#' + n).animate({'left': currentLeft + window.innerWidth},500);
+			}
+			$('#slideContent').animate({'left': window.innerWidth}, 500, function() {$('#slideContent').css({'display':'none'});});
+			visibleBool = false;
+
+		}
+		else{
+			for (n=1;n<=numberElements;n++){
+			var currentLeft = parseFloat(($('#' + n).css('left').split("px"))[0]);
+			$('#' + n).animate({'left': currentLeft - window.innerWidth},500);
+			}
+			$('#slideContent').load('ajaxContent/content1.html');
+			$('#slideContent').css({'display':'block','left':window.innerWidth});
+			//alert(($('#slideContent').css('width').split("px"))[0]);
+			$('#slideContent').animate({'left': (window.innerWidth - ($('#slideContent').css('width').split("px"))[0]) / 2}, 500);
+
+			visibleBool = true;
+
+		}
+		
+
+
+	})
 	
 	var numberElements = $('#content').children().length;
 	var numberNavElements = $('#navigation').children().length;
@@ -162,6 +191,8 @@ $(document).ready(function(){
 	<div id="13" class="module"></div>
 	<div id="14" class="module"></div>
 </div>
+<div id="slideContent"></div>
+<div id="button"></div>
 </div>
 </body>
 </html>
