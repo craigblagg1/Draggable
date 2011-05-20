@@ -19,6 +19,13 @@ $(document).ready(function(){
 	var numberNavElements = $('#navigation').children().length;
 	var navWidth = (window.innerWidth - 150)/numberNavElements;
 	//alert(navWidth);
+	
+	document.body.onresize = function(){
+		navWidth = (window.innerWidth - 150)/6;
+		for (n=1;n<=6;n++){
+			$('#nav' + n).css({'width':navWidth});
+		}
+	};
 	for (n=1;n<=numberNavElements;n++)
 	{
 		$('#nav'+ n).css({'width':navWidth});

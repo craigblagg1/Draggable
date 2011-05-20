@@ -1,7 +1,7 @@
 #wrapper { width:100%; margin: 10px;}
 
 #navigation{float:left; color: white; width:100%; min-height: 50px; list-style:none; font-family: Arial, sans-serif; font-weight:bold; margin-bottom:10px;}
-#navigation li{min-width: 200px; float:left;margin-right:2px;position:relative;display:block;background-color: black;}
+#navigation li{ float:left;margin-right:2px;position:relative;display:block;background-color: black;}
 #navigation li a{display:block;color:white;background:grey;text-decoration:none;}
 
 #navigation ul{width: 100%; color: white; background-color: grey; margin-top: 0px; list-style:none;position:absolute;left:-9999px;opacity:0; -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; filter:alpha(opacity=0);-webkit-transition:0.25s linear opacity; z-index: 999999; padding-left: 0px;}
