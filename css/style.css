@@ -1,26 +1,237 @@
-#wrapper { width:100%; margin: 10px;}
-#content{left:0;}
-#navigation{float:left; color: white; width:100%; min-height: 50px; list-style:none; font-family: Arial, sans-serif; font-weight:bold; margin-bottom:10px;}
-#navigation li{ float:left;margin-right:2px;position:relative;display:block;background-color: black;}
-#navigation li a{display:block;color:white;background:grey;text-decoration:none;}
 
-#navigation ul{width: 100%; color: white; background-color: grey; margin-top: 0px; list-style:none;position:absolute;left:-9999px;opacity:0; -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; filter:alpha(opacity=0);-webkit-transition:0.25s linear opacity; z-index: 999999; padding-left: 0px;}
-#navigation ul li{float:none; margin: 0px; margin-top: 5px;}
-#navigation ul a{white-space:nowrap; display:block;}
-#navigation li:hover ul{left:0;opacity:1; -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; filter:alpha(opacity=100);}
-#navigation li:hover a{background:black; text-decoration:none;}
-#navigation li:hover ul a{text-decoration:none; color: grey;}
-#navigation li:hover ul li a:hover{background:black; background:green;text-decoration:none; color: white;}
+body {
+	margin:0;
+	padding:0;
+	font-family:Verdana, Geneva, sans-serif;
+}
 
-.module {min-width: 150px; min-height: 150px; background: black; float: left; margin: 1px; border: white solid 1px;}
-.draggable {cursor: move; float: none; position: absolute;}
-.clearfix {width: 100%; clear: both;}
+#wrapper {
+	width:990px;
+	position:relative;
+	/*left:50%;
+	margin-left:-495px;*/
+	margin:auto;
+}
+
+#content {
+	position:relative;
+	border:1px solid red;
+}
+
+.module {
+	min-width: 280px;
+	min-height: 340px;
+	background: #f60;
+	float: left;
+	margin: 1px;
+	border: white solid 1px;
+	box-shadow: 10px 10px 5px #888;
+}
+
+.draggable {
+	cursor: move;
+	float: none;
+	position: absolute;
+}
+
+.fullBg {
+	position: fixed;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+}
+
+#maincontent {
+	top: 300px;
+	left: 0;
+	z-index: 50;
+	width: 100%;
+	background: #fff;
+	opacity: 0.9;
+	filter: alpha(opacity=90);
+}
+
+#lines{
+	background: transparent url('../img/lines.png') repeat-x;
+	height: 50px;
+	width: 90%;
+}
+
+/*=========================================================================*/
+/*navigation*/
+nav {
+	width:100%;
+	position:relative;
+	margin-bottom:10px;
+	min-height: 50px;
+	z-index: 99999;
+}
+
+#navigation {
+	float:left;
+	color: white;
+	width:100%;
+	list-style:none;
+	margin:0;
+	padding:0;
+	font-weight:bold;
+}
+
+#navigation li {
+	width: 240px;
+	float:left;
+	margin-right:2px;
+	position:relative;
+	display:block;
+	background-color: black;
+}
+
+#navigation li a {
+	display:block;
+	color:white;
+	background:grey;
+	text-decoration:none;
+}
+
+#navigation ul {
+	width: 100%;
+	color: white;
+	background-color: grey;
+	margin-top: 0px;
+	list-style:none;
+	position:absolute;
+	left:-9999px;
+	opacity:0;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter:alpha(opacity=0);
+	-webkit-transition:0.25s linear opacity;
+	z-index: 999999;
+	padding-left: 0px;
+}
+
+#navigation ul li {
+	float:none;
+	margin: 0px;
+	margin-top: 5px;
+}
+
+#navigation ul a {
+	white-space:nowrap;
+	display:block;
+}
+
+#navigation li:hover ul {
+	left:0;
+	opacity:1;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter:alpha(opacity=100);
+}
+
+#navigation li:hover a {
+	background:black;
+	text-decoration:none;
+}
+
+#navigation li:hover ul a {
+	text-decoration:none;
+	color: grey;
+}
+
+#navigation li:hover ul li a:hover {
+	background:black;
+	background:green;
+	text-decoration:none;
+	color: white;
+}
 
 
-#slideContent{width: 800px; height: 500px; background: red; position: absolute; display: none; left: 1200px;}
-#button{width:50px; height: 50px; background: green; position: absolute;}
+
+/*=========================================================================*/
+/*footer*/
+
+footer {
+	width:100%;
+	background:#000;
+	position:fixed;
+	bottom:0;
+	color:#fff;
+}
+footer p {
+}
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+/*=========================================================================*/
+.clearfix {
+	display: inline-block;
+}
+
+html[xmlns] .clearfix {
+	display: block;
+}
+
+* html .clearfix {
+	height: 1%;
+}
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
+
+
+/*=========================================================================*/
+#slideContent {
+	width: 800px;
+	height: 100%;
+	background: rgb(48, 48, 48);
+	background: rgba(48,48,48,0.96);
+	position: absolute;
+	display: none;
+	left: 1200px;
+}
+
+#button {
+	width:50px;
+	height: 50px;
+	background: green;
+	position: absolute;
+	right:50px;
+	bottom:50px;
+	cursor:pointer;
+}
+
+#up {
+	width:50px;
+	height: 50px;
+	background: white;
+	position: absolute;
+	bottom:120px;
+	cursor:pointer;
+}
+
+#down {
+	width:50px;
+	height: 50px;
+	background: white;
+	position: absolute;
+	bottom:50px;
+	cursor:pointer;
+}
