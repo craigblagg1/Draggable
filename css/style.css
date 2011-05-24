@@ -1,3 +1,4 @@
+html{overflow: hidden;}
 
 body {
 	margin:0;
@@ -235,3 +236,44 @@ html[xmlns] .clearfix {
 	bottom:50px;
 	cursor:pointer;
 }
+
+
+
+
+
+/*====================DIALOG BOXES===========================*/
+#dialog_link {
+	padding: 0;
+	text-decoration: none;
+	position: relative;
+}
+
+.ui-dialog {
+	border:1px solid black;
+}
+
+#dialog1 {
+	background:red;
+}
+#dialog2 {
+	background:gainsboro;
+}
+#dialog3 {
+	background:#000;
+}
+#dialog4 {
+	background:#6fcdf4;
+}
+#dialog5 {
+	background:gainsboro;
+}
+#dialog6 {
+	background:gainsboro;
+}
+#dialog7 {
+	background:gainsboro;
+}
+#dialog8 {
+	background:gainsboro;
+}
+
