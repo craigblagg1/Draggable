@@ -129,6 +129,13 @@ $(document).ready(function(){
 		$('#background' + (activeBG + 1)).attr('src','img/bg_image' + (activeBG + 1) + '.jpg');
 		$('#background' + (activeBG - 1)).fullBg();
 		$('#background' + (activeBG + 1)).fullBg();
+		if(visibleBool == false){
+			$('#contentContainer').fadeOut(500, function(){			
+				$('#contentContainer').load('ajaxContent/content' + activeBG + '.html', function(){
+					$('#contentContainer').fadeIn(500);
+				});
+			});
+		}
 	}
 	else{
 		alert('at top');
