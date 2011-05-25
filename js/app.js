@@ -144,6 +144,40 @@ $(document).ready(function(){
 	
 	/////END OF DEALING WITH SCREEN RESIZING
 	
+	//////KEY HANDLING FOR STORY
+	$(document).keydown(function(event) {
+  
+  	/////////LEFT ARROW ///////////
+  	if (event.keyCode == '37') {
+  		var numberElements = $('.dialog').length;
+		event.preventDefault();
+        var fadeTime = 500;
+		if(visibleBool == true){
+			for (n=1;n<=numberElements;n++){
+				$('#dialog' + n).parent().fadeOut(fadeTime);
+			}
+		$('#contentContainer').load('ajaxContent/content' + activeBG + '.html');
+		$('#slideContent').css({'display':'block','left':window.innerWidth}).delay(fadeTime);
+		$('#slideContent').animate({'left': (window.innerWidth - ($('#slideContent').css('width').split("px"))[0]) / 2}, fadeTime).delay(fadeTime);
+		$('#button').html('<p>close me</p>');
+		visibleBool = false;
+		} 
+   }
+   
+   ////////ESCAPE ///////////
+   if (event.keyCode == '27') {	
+   	 var numberElements = $('.dialog').length;
+     event.preventDefault();
+             var fadeTime = 500;
+
+     for (n=1;n<=numberElements;n++){
+		$('#dialog' + n).parent().delay(fadeTime).fadeIn(fadeTime);
+	}
+	$('#slideContent').animate({'left': window.innerWidth}, fadeTime, function() {$('#slideContent').css({'display':'none'});});
+	$('#button').html('<p>open me</p>');
+	visibleBool = true;
+   }
+   });
 	
 	/////WE'LL SORT OUT THE CREATION OF THE DIALOG BOXES AND THEIR INITIAL OPTIMUM POSITION
 	var offsets = [
